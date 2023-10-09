@@ -7,28 +7,43 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='pay-card-section'>
+      <div className='grid pay-card-grid'>
+        <div className='col'>
+
+          <div className='pay-bg'></div>
+        </div>
+        <div className='col'>
+          <form className='pay-form'>
+            <div className='pay-form-container'>
+              <label htmlFor='cardholder' className='pay-form-label'>CARDHOLDER NAME</label>
+              <input type='text' name='cardholder' placeholder='e.g. Mark Spencer' />
+            </div>
+            <div className='pay-form-container'>
+              <label htmlFor='cardNumber' className='pay-form-label'>CARD NUMBER</label>
+              <input type='text' name='cardNumber' placeholder='e.g. Mark Spencer' />
+            </div>
+            <div className='pay-card-info'>
+              <div className='pay-card-date'>
+                <div className='pay-form-container'>
+                  <label htmlFor='cardNumber' className='pay-form-label'>EXP. DATE (MM/YY)</label>
+                  <div className='form-date-container'>
+                    <input type='text' name='cardNumber' placeholder='e.g. Mark Spencer' />
+                    <input className='pay-input' type='text' />
+                  </div>
+                </div>
+              </div>
+
+              <div className='pay-form-container'>
+                <label htmlFor='cardNumber' className='pay-form-label'>CVV</label>
+                <input type='text' name='cardNumber' placeholder='999' />
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+    </div>
   )
 }
 
