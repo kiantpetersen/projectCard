@@ -4,7 +4,11 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [cardData, setCardData] = useState({
+    name: 'Mark Spencer'
+  })
+
+
 
   return (
     <div className='pay-card-section'>
@@ -23,6 +27,9 @@ function App() {
               <p className='card-name'>Mark Spencer</p>
               <p className=' card-date'>09/01</p>
             </div>
+          </div>
+          <div className='card-back'>
+            <p className='cvc-number'>741</p>
           </div>
         </div>
         <div className='col'>
