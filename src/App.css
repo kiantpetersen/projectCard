@@ -78,6 +78,10 @@ body {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
+
+.card-input:focus {
+  border: 3px solid var(--dark-violet);
+}
 .date-inputs {
   display: flex;
   gap: 5px;

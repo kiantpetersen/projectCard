@@ -21,6 +21,11 @@ function App() {
     })
   }
 
+  function handleSubmit(e) {
+    e.preventDefault()
+    console.log('Event: ', e)
+  }
+
 
   return (
     <div className='pay-card-section'>
@@ -45,7 +50,7 @@ function App() {
           </div>
         </div>
         <div className='col'>
-          <form className='pay-form'>
+          <form onSubmit={handleSubmit} className='pay-form'>
             <div className='pay-form-container'>
               <label htmlFor='cardholder' className='pay-form-label'>CARDHOLDER NAME</label>
               <input onChange={handleChange} value={cardData.name} className='card-input' type='text' name='cardholder' placeholder='e.g. Mark Spencer' />
@@ -68,7 +73,7 @@ function App() {
               </div>
             </div>
 
-            <button className=' btn pay-btn'>Confirm</button>
+            <button type='submit' className=' btn pay-btn'>Confirm</button>
           </form>
         </div>
       </div>
