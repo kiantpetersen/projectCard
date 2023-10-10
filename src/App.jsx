@@ -7,11 +7,11 @@ import Success from './Components/Success'
 
 function App() {
   const [cardData, setCardData] = useState({
-    cardholder: '',
-    cardNumber: '',
+    cardholder: 'peter Parker',
+    cardNumber: '1111 2222 3333 4444',
     month: '',
-    year: '',
-    cvcNumber: ''
+    year: '26',
+    cvcNumber: '555'
 
   })
 
@@ -49,27 +49,31 @@ function App() {
     const name = cardData.cardholder
     let res = true;
 
-    if (num.length !== 16) {
+
+
+
+
+    if (num.length !== 16 || (/^\d+$/.test(num)) === false) {
       res = false
       setErrs((prev) => {
-        return { ...prev, holderErr: 'Invalid Number' }
+        return { ...prev, numberErr: 'Invalid Number' }
       })
       return res
-    } else if (month.length !== 2 || Number(month) < 1 || Number(month) > 12) {
+    } else if (month.length !== 2 || Number(month) < 1 || Number(month) > 12 || (/^\d+$/.test(month)) === false) {
       res = false
       setErrs((prev) => {
         return { ...prev, dateErr: 'Invalid  date input' }
       })
       return res
     }
-    else if (year.length !== 2 || Number(year) < 23 || Number(year) > 30) {
+    else if (year.length !== 2 || Number(year) < 23 || Number(year) > 30 || (/^\d+$/.test(year)) === false) {
       res = false
       setErrs((prev) => {
         return { ...prev, dateErr: 'Invalid date input' }
       })
       return res
     }
-    else if (cvc.length !== 3) {
+    else if (cvc.length !== 3 || (/^\d+$/.test(cvc)) === false) {
       res = false
       setErrs((prev) => {
         return { ...prev, cvcErr: 'Invalid cvc' }
@@ -98,6 +102,12 @@ function App() {
       cvcNumber: ''
     })
     setSubmit(false)
+    setErrs({
+      holderErr: '',
+      numberErr: '',
+      dateErr: '',
+      cvcErr: ''
+    })
   }
 
 
