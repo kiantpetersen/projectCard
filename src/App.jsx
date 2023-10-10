@@ -9,9 +9,21 @@ function App() {
   return (
     <div className='pay-card-section'>
       <div className='grid pay-card-grid'>
-        <div className='col'>
+        <div className='col card-col'>
 
           <div className='pay-bg'></div>
+          <div className='card-front'>
+            <div className='circles-container'>
+
+              <div className='circle-closed'></div>
+              <div className='circle-open'></div>
+            </div>
+            <p className='card-number'>1111 2222 8888 9999 </p>
+            <div className='card-front-info'>
+              <p className='card-name'>Mark Spencer</p>
+              <p className=' card-date'>09/01</p>
+            </div>
+          </div>
         </div>
         <div className='col'>
           <form className='pay-form'>
