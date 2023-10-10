@@ -1,6 +1,7 @@
 import React from 'react';
 
 function CardForm({ cardData, handleChange, handleSubmit }) {
+
     return (
         <form onSubmit={handleSubmit} className='pay-form'>
             <div className='pay-form-container'>
