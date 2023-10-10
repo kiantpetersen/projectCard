@@ -2,6 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import CardForm from './Components/CardForm'
+import Success from './Components/Success'
 
 function App() {
   const [cardData, setCardData] = useState({
@@ -12,6 +14,7 @@ function App() {
     cvcNumber: '000'
 
   })
+  const [submit, setSubmit] = useState(false)
   function handleChange(e) {
     const { name, value } = e.target
     setCardData((prev) => {
@@ -23,7 +26,8 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    console.log('Event: ', e)
+    console.log('Event: ', e.target)
+    setSubmit(prev => !prev)
   }
 
 
@@ -50,31 +54,9 @@ function App() {
           </div>
         </div>
         <div className='col'>
-          <form onSubmit={handleSubmit} className='pay-form'>
-            <div className='pay-form-container'>
-              <label htmlFor='cardholder' className='pay-form-label'>CARDHOLDER NAME</label>
-              <input onChange={handleChange} value={cardData.name} className='card-input' type='text' name='cardholder' placeholder='e.g. Mark Spencer' />
-            </div>
-            <div className='pay-form-container'>
-              <label htmlFor='cardNumber' className='pay-form-label'>CARD NUMBER</label>
-              <input onChange={handleChange} value={cardData.cardNumber} className='card-input' type='text' name='cardNumber' placeholder='1111 2222 8888 9999' />
-            </div>
-            <div className='card-info-container'>
-              <div className='pay-form-container' >
-                <label className='pay-form-label'>EXP. DATE (MM/YY)</label>
-                <div className='date-inputs'>
-                  <input onChange={handleChange} name='month' value={cardData.month} placeholder='MM' className='card-input date-input' />
-                  <input onChange={handleChange} name='year' value={cardData.year} placeholder='YY' className='card-input date-input' />
-                </div>
-              </div>
-              <div className='pay-form-container' >
-                <label className='pay-form-label'>CVC</label>
-                <input onChange={handleChange} value={cardData.cvcNumber} name='cvcNumber' className='card-input cvc-input' />
-              </div>
-            </div>
+          {submit ? <CardForm handleSubmit={handleSubmit} handleChange={handleChange} cardData={cardData} /> : <Success handleSubmit={handleSubmit} />}
 
-            <button type='submit' className=' btn pay-btn'>Confirm</button>
-          </form>
+
         </div>
       </div>
 
