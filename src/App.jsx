@@ -17,28 +17,27 @@ function App() {
           <form className='pay-form'>
             <div className='pay-form-container'>
               <label htmlFor='cardholder' className='pay-form-label'>CARDHOLDER NAME</label>
-              <input type='text' name='cardholder' placeholder='e.g. Mark Spencer' />
+              <input className='card-input' type='text' name='cardholder' placeholder='e.g. Mark Spencer' />
             </div>
             <div className='pay-form-container'>
               <label htmlFor='cardNumber' className='pay-form-label'>CARD NUMBER</label>
-              <input type='text' name='cardNumber' placeholder='e.g. Mark Spencer' />
+              <input className='card-input' type='text' name='cardNumber' placeholder='1111 2222 8888 9999' />
             </div>
-            <div className='pay-card-info'>
-              <div className='pay-card-date'>
-                <div className='pay-form-container'>
-                  <label htmlFor='cardNumber' className='pay-form-label'>EXP. DATE (MM/YY)</label>
-                  <div className='form-date-container'>
-                    <input type='text' name='cardNumber' placeholder='e.g. Mark Spencer' />
-                    <input className='pay-input' type='text' />
-                  </div>
+            <div className='card-info-container'>
+              <div className='pay-form-container' >
+                <label className='pay-form-label'>EXP. DATE (MM/YY)</label>
+                <div className='date-inputs'>
+                  <input placeholder='MM' className='card-input date-input' />
+                  <input placeholder='YY' className='card-input date-input' />
                 </div>
               </div>
-
-              <div className='pay-form-container'>
-                <label htmlFor='cardNumber' className='pay-form-label'>CVV</label>
-                <input type='text' name='cardNumber' placeholder='999' />
+              <div className='pay-form-container' >
+                <label className='pay-form-label'>CVC</label>
+                <input className='card-input cvc-input' />
               </div>
             </div>
+
+            <button className=' btn pay-btn'>Confirm</button>
           </form>
         </div>
       </div>

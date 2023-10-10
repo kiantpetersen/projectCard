@@ -1,3 +1,10 @@
+:root {
+  --white-color: hsl(0, 0%, 100%);
+  --light-gray: hsl(270, 3%, 87%);
+  --dark-gray: hsl(279, 6%, 55%);
+  --dark-violet: hsl(278, 68%, 11%);
+}
+
 html {
   margin: 0;
   padding: 0;
@@ -40,14 +47,59 @@ body {
 .pay-form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
 }
 .pay-form-container {
   display: flex;
   flex-direction: column;
+  padding: 5px 0;
+  width: 100%;
 }
 .pay-form-label {
   font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 5px;
 }
-.pay-card-info {
+.card-info-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.card-input {
+  padding: 5px;
+  border: solid 1px var(--light-gray);
+  font-size: 15px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.date-inputs {
+  display: flex;
+  gap: 5px;
+}
+.date-input {
+  width: 45%;
+}
+.cvc-input {
+  width: 90%;
+}
+
+.pay-btn {
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--dark-violet);
+  color: var(--white-color);
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
