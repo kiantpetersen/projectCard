@@ -236,3 +236,9 @@ ion-icon {
   font-size: 56px;
   color: var(--white-color);
 }
+
+.error-text {
+  margin: 0px 0 0 0;
+  color: red;
+  font-size: 12px;
+}

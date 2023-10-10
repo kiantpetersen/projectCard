@@ -14,6 +14,13 @@ function App() {
     cvcNumber: ''
 
   })
+
+  const [errs, setErrs] = useState({
+    holderErr: '',
+    numberErr: '',
+    dateErr: '',
+    cvcErr: ''
+  })
   const [submit, setSubmit] = useState(false)
   function handleChange(e) {
     const { name, value } = e.target
@@ -44,21 +51,36 @@ function App() {
 
     if (num.length !== 16) {
       res = false
+      setErrs((prev) => {
+        return { ...prev, holderErr: 'Invalid Number' }
+      })
       return res
     } else if (month.length !== 2 || Number(month) < 1 || Number(month) > 12) {
       res = false
+      setErrs((prev) => {
+        return { ...prev, dateErr: 'Invalid  date input' }
+      })
       return res
     }
     else if (year.length !== 2 || Number(year) < 23 || Number(year) > 30) {
       res = false
+      setErrs((prev) => {
+        return { ...prev, dateErr: 'Invalid date input' }
+      })
       return res
     }
     else if (cvc.length !== 3) {
       res = false
+      setErrs((prev) => {
+        return { ...prev, cvcErr: 'Invalid cvc' }
+      })
       return res
     }
     else if (!name.length) {
       res = false
+      setErrs((prev) => {
+        return { ...prev, holderErr: 'Invalid Name' }
+      })
       return res
 
     }
@@ -102,7 +124,7 @@ function App() {
           </div>
         </div>
         <div className='col'>
-          {!submit ? <CardForm handleSubmit={handleSubmit} handleChange={handleChange} cardData={cardData} /> : <Success handleSubmit={resetData} />}
+          {!submit ? <CardForm errors={errs} handleSubmit={handleSubmit} handleChange={handleChange} cardData={cardData} /> : <Success handleSubmit={resetData} />}
 
 
         </div>
