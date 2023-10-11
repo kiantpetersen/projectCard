@@ -388,10 +388,10 @@ ion-icon {
     margin: 0;
   }
   .success-container {
-    margin: 10px;
+    margin: 20px;
   }
   .pay-form {
-    margin: 10px;
+    margin: 20px;
   }
 }
 @media only screen and (max-width: 380px) {
@@ -420,11 +420,5 @@ ion-icon {
   .cvc-number {
     top: 62px;
     right: 20px;
-  }
-  .success-container {
-    margin: 10px;
-  }
-  .pay-form {
-    margin: 10px;
   }
 }

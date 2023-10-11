@@ -133,7 +133,7 @@ function App() {
             <p className='cvc-number'>{cardData.cvcNumber ? cardData.cvcNumber : '000'}</p>
           </div>
         </div>
-        <div className='col'>
+        <div className='col card-col'>
           {!submit ? <CardForm errors={errs} handleSubmit={handleSubmit} handleChange={handleChange} cardData={cardData} /> : <Success handleSubmit={resetData} />}
 
 
