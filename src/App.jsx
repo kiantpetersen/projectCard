@@ -42,6 +42,12 @@ function App() {
     // setSubmit(prev => !prev)
   }
   function validateInputs() {
+    setErrs({
+      holderErr: '',
+      numberErr: '',
+      dateErr: '',
+      cvcErr: ''
+    })
     const num = cardData.cardNumber.replace(/ +/g, "")
     const month = cardData.month
     const year = cardData.year
@@ -58,35 +64,29 @@ function App() {
       setErrs((prev) => {
         return { ...prev, numberErr: 'Invalid Number' }
       })
-      return res
     } else if (month.length !== 2 || Number(month) < 1 || Number(month) > 12 || (/^\d+$/.test(month)) === false) {
       res = false
       setErrs((prev) => {
         return { ...prev, dateErr: 'Invalid  date input' }
       })
-      return res
     }
     else if (year.length !== 2 || Number(year) < 23 || Number(year) > 30 || (/^\d+$/.test(year)) === false) {
       res = false
       setErrs((prev) => {
         return { ...prev, dateErr: 'Invalid date input' }
       })
-      return res
     }
     else if (cvc.length !== 3 || (/^\d+$/.test(cvc)) === false) {
       res = false
       setErrs((prev) => {
         return { ...prev, cvcErr: 'Invalid cvc' }
       })
-      return res
     }
     else if (!name.length) {
       res = false
       setErrs((prev) => {
         return { ...prev, holderErr: 'Invalid Name' }
       })
-      return res
-
     }
     return res
     // console.log('Num: ', num.length)
