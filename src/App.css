@@ -10,8 +10,9 @@ html {
   padding: 0;
 }
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  max-width: 1440px;
 }
 
 .grid {
@@ -302,10 +303,116 @@ ion-icon {
   }
 }
 @media only screen and (max-width: 768px) {
+  .card-front {
+    left: 10%;
+    width: 375px;
+    height: 150px;
+    top: 160px;
+  }
+  .card-back {
+    width: 375px;
+    height: 150px;
+    right: 10%;
+    top: 20px;
+  }
 }
 @media only screen and (max-width: 600px) {
+  .card-front {
+    left: 5%;
+    width: 325px;
+    height: 145px;
+    top: 160px;
+    padding: 20px;
+  }
+  .card-back {
+    width: 325px;
+    height: 145px;
+    right: 5%;
+    top: 20px;
+    padding: 20px;
+  }
+  .card-number {
+    margin: 10px 0;
+  }
+  .cvc-number {
+    top: 65px;
+    right: 50px;
+  }
 }
 @media only screen and (max-width: 490px) {
+  .pay-bg {
+    height: 350px;
+  }
+  .card-front {
+    left: 5%;
+    width: 275px;
+    height: 115px;
+    top: 140px;
+    padding: 20px;
+    justify-content: space-between;
+  }
+  .card-back {
+    width: 275px;
+    height: 115px;
+    right: 5%;
+    top: 20px;
+    padding: 20px;
+  }
+  .card-number {
+    font-size: 18px;
+  }
+  .card-name {
+    font-size: 14px;
+  }
+  .card-date {
+    font-size: 14px;
+  }
+  .circle-closed {
+    height: 30px;
+    width: 30px;
+    background-color: var(--white-color);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .circle-open {
+    height: 15px;
+    width: 15px;
+    background-color: none;
+    border: solid 2px var(--white-color);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .cvc-number {
+    top: 70px;
+    right: 50px;
+    margin: 0;
+  }
 }
 @media only screen and (max-width: 380px) {
+  .pay-bg {
+    height: 300px;
+  }
+  .card-front {
+    left: 5%;
+    width: 225px;
+    height: 115px;
+    top: 110px;
+    padding: 20px;
+    justify-content: space-between;
+  }
+  .card-back {
+    width: 225px;
+    height: 115px;
+    right: 5%;
+    top: 20px;
+    padding: 20px;
+  }
+  .card-number {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  .cvc-number {
+    top: 62px;
+    right: 20px;
+  }
 }
